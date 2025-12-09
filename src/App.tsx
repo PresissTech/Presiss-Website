@@ -10,7 +10,7 @@ import Portfolio from "./pages/Portfolio";
 import NotFound from "./pages/NotFound";
 import MobileApp from "./pages/services/MobileApp";
 import WebDevelopment from "./pages/services/WebDevelopment";
-import UiUxDesign from "./pages/services/WebDevelopment";
+import UiUxDesign from "./pages/services/UiUxDesign";
 import ScrollToTop from "./ScrollToTop";
 
 const queryClient = new QueryClient();

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4">
-            <img src={logo} alt="Presiss Technologies" className="h-10 w-auto brightness-0 invert" />
+            <img src={logo} alt="Presiss Technologies" className="h-10 w-auto" />
             <p className="text-sm text-primary-foreground/80">
               Precisely building the digital foundations for the enterprises
             </p>
