@@ -11,23 +11,28 @@ import {
 const Testimonials = () => {
   const testimonials = [
     {
-      text: "I had the pleasure of working with Hiren. Hiren is outstanding mobile application developer. His expertise, professionalism, and commitment to delivering high-quality results were truly impressive. The developer demonstrated excellent communication skills, ensuring a smooth and collaborative process. He not only met but exceeded my expectations, delivering a mobile application that not only functioned flawlessly but also showcased innovative design elements. I highly recommend this developer for anyone seeking a skilled and reliable professional for their mobile app development needs.",
+      text: "Chirag is one the top talented engineers I have worked with, very professional, and has good business understanding. His flexibility and speed made a huge difference in delivering the project in perfect shape. Also, he's very expert on Flutter development.",
+      client: "Bader",
+      companyName: ""
+    },
+      {
+      text: "Hiren is an exceptional Android developer and iOS developer with a strong knowledge of Mobile application development. I can attest to their exceptional skills and dedication to delivering outstanding results. I highly recommend hiring this individual again due to their exceptional skills and expertise in mobile app development.",
+      client: "Ayoola A.",
+      companyName: "Gofernets"
+    },
+    {
+      text: "I had the pleasure of working with Hiren. Hiren is outstanding mobile application developer. His expertise, professionalism, and commitment to delivering high-quality results were truly impressive. The developer demonstrated excellent communication skills, ensuring a smooth and collaborative process. I highly recommend this developer for anyone seeking a skilled and reliable professional for their mobile app development needs.",
       client: "Surat (M Corp.)",
       companyName: ""
     },
     {
-      text: "Hiren is an exceptional Android developer and iOS developer with a strong knowledge of Mobile application development. I can attest to their exceptional skills and dedication to delivering outstanding results. I highly recommend hiring this individual again due to their exceptional skills and expertise in mobile app development.",
-      client: "Ayoola Adesoye",
-      companyName: "Gofernets"
-    },
-    {
-      text: "Hiren did a brilliant job on my project. It was a really wonderful experience working with him. Felt like we were a single team with him during the contract. Also, you can rely on his advice if your project faces difficulties. Highly recommended, will hire Mikhail for further project and maintenance of this one!",
-      client: "Amit",
+      text: "Chirag possesses exceptional app development skills. He understands project requirements patiently and implements them quite well",
+      client: "Andrew",
       companyName: ""
     },
     {
       text: "Hiren did a brilliant job on my project. It was a really wonderful experience working with him. Felt like we were a single team with him during the contract. Also, you can rely on his advice if your project faces difficulties. Highly recommended, will hire Mikhail for further project and maintenance of this one!",
-      client: "Amit",
+      client: "Leo",
       companyName: ""
     }
   ];
@@ -45,8 +50,8 @@ return (
               align: "start",
               loop: true,
             }}
-            className="w-full"
-          >
+            className="w-full">
+
             <CarouselContent className="-ml-4">
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
@@ -57,7 +62,7 @@ return (
                         {testimonial.text}
                       </p>
                       <div className="flex items-center gap-3 pt-4">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-secondary"></div>
+                        {/* <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-secondary"></div> */}
                         <div>
                           <p className="font-semibold text-primary">{testimonial.client}</p>
                           <p className="text-xs text-muted-foreground">{testimonial.companyName}</p>

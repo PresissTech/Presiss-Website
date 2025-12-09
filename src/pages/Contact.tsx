@@ -18,10 +18,19 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 
+// UPDATED ZOD VALIDATION FOR PHONE
 const contactSchema = z.object({
   fullName: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Invalid email address").max(255),
-  phone: z.string().trim().min(10, "Phone number is required").max(20),
+
+  // Allow only digits and optional leading +
+  phone: z
+    .string()
+    .trim()
+    .regex(/^\+?\d+$/, "Phone number must contain only numbers and optional + sign")
+    .min(10, "Phone number is required")
+    .max(20),
+
   category: z.string().min(1, "Please select a category"),
   budget: z.string().min(1, "Please select a budget"),
   message: z.string().trim().max(1000).optional(),
@@ -45,8 +54,7 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
     setTimeout(() => {
       console.log("Form data:", data);
       toast({
@@ -61,7 +69,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary via-primary to-primary/90">
@@ -75,7 +83,8 @@ const Contact = () => {
                 <span className="text-accent block">Amazing Together</span>
               </h1>
               <p className="text-lg text-primary-foreground/90 mb-12 max-w-2xl">
-                Have a project in mind? We'd love to hear about it. Share your vision with us and let's turn your ideas into reality with cutting-edge technology and innovative solutions.
+                Have a project in mind? We'd love to hear about it. Share your vision with us and let's
+                turn your ideas into reality with cutting-edge technology and innovative solutions.
               </p>
 
               {/* Features */}
@@ -146,6 +155,7 @@ const Contact = () => {
                   </div>
                 </div>
 
+                {/* UPDATED PHONE FIELD */}
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number*</Label>
                   <Input
@@ -154,6 +164,18 @@ const Contact = () => {
                     placeholder="Enter Your Phone Number"
                     {...register("phone")}
                     className={errors.phone ? "border-destructive" : ""}
+                    onInput={(e) => {
+                      // Allow leading +, remove everything else except digits
+                      e.target.value = e.target.value.replace(/(?!^\+)\D/g, "");
+                    }}
+                    onKeyDown={(e) => {
+                      const allowedKeys = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"];
+                      if (allowedKeys.includes(e.key)) return;
+
+                      if (!/[0-9]/.test(e.key) && !(e.key === "+" && e.target.value.length === 0)) {
+                        e.preventDefault();
+                      }
+                    }}
                   />
                   {errors.phone && (
                     <p className="text-sm text-destructive">{errors.phone.message}</p>
@@ -191,7 +213,9 @@ const Contact = () => {
                         <SelectValue placeholder="Select Budget" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="under-10k">Under $10,000</SelectItem>
+                        <SelectItem value="under-1k">Under $1,000</SelectItem>
+                        <SelectItem value="1k-5k">$1,000 - $5,000</SelectItem>
+                        <SelectItem value="4k-10k">$5,000 - $10,000</SelectItem>
                         <SelectItem value="10k-25k">$10,000 - $25,000</SelectItem>
                         <SelectItem value="25k-50k">$25,000 - $50,000</SelectItem>
                         <SelectItem value="50k-100k">$50,000 - $100,000</SelectItem>
@@ -234,12 +258,10 @@ const Contact = () => {
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-20 bg-gradient-to-br from-primary/10 via-accent/5 to-background">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Why Choose Presiss Technologies?
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Presiss Technologies?</h2>
               <p className="text-muted-foreground text-lg">
                 We deliver exceptional results with cutting-edge development
               </p>

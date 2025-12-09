@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -92,17 +93,22 @@ const About = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-brand-navy to-brand-navy/90">
+        <section className="py-20 bg-gradient-to-br from-primary/10 via-accent/5 to-background">
           <div className="container text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Let's Connect With Us
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              "Ready to bring your ideas to life? Contact us today and let’s collaborate to build powerful, meaningful, and innovative digital experiences."
-            </p>
-            <button className="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-md font-semibold transition-colors">
-              Contact Us
-            </button>
+            <div className="max-w-3xl mx-auto text-center space-y-6">
+              <h2 className="text-3xl md:text-5xl font-bold text-primary">
+                Let's Connect With Us
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                "Ready to bring your ideas to life? Contact us today and let’s collaborate to build powerful, meaningful, and innovative digital experiences."
+              </p>
+              <div className="max-w-3xl mx-auto text-center space-y-10"></div>
+              <Link to="/contact">
+                <button className="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-md font-semibold transition-colors">
+                  Contact Us
+                </button>
+              </Link>
+            </div>
           </div>
         </section>
       </main>

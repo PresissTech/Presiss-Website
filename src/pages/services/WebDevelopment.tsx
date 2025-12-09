@@ -146,8 +146,9 @@ const UiUxDesign = () => {
             <p className="text-lg text-muted-foreground mb-8">
               See how our design expertise has transformed businesses
             </p>
+            <div className="max-w-3xl mx-auto text-center space-y-10"></div>
             <Link to="/portfolio">
-              <Button size="lg" variant="outline" className="text-base">
+              <Button size="lg" className="text-base">
                 View Our Portfolio
               </Button>
             </Link>
