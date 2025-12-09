@@ -165,6 +165,7 @@ const UiUxDesign = () => {
             <p className="text-lg text-muted-foreground">
               Let's create designs that drive engagement and deliver measurable results
             </p>
+            <div className="max-w-3xl mx-auto text-center space-y-10"></div>
             <Link to="/contact">
               <Button size="lg" className="text-base">
                 Get Started Today

@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import MobileApp from "./pages/services/MobileApp";
 import WebDevelopment from "./pages/services/WebDevelopment";
 import UiUxDesign from "./pages/services/WebDevelopment";
+import ScrollToTop from "./ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
@@ -28,7 +30,6 @@ const App = () => (
           <Route path="/web-development" element={<WebDevelopment />} />
           <Route path="/ui-ux-design" element={<UiUxDesign />} />
           <Route path="/contact" element={<Contact />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

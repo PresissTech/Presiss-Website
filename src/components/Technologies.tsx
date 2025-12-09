@@ -1,12 +1,12 @@
 const Technologies = () => {
   const technologies = [
-    "Flutter",
-    "Angular",
-    "Java",
     "iOS",
+    "Android",
+    "Flutter",
+    "FlutterFlow",
+    "React Native",
     "HTML",
     "Laravel",
-    "Kotlin",
     "Python",
     "PHP",
     "Vue",

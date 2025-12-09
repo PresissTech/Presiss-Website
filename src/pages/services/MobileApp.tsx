@@ -317,17 +317,18 @@ const MobileApp = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-accent to-secondary text-white">
-          <div className="container text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">
+        <section className="py-20 bg-gradient-to-br from-primary/10 via-accent/5 to-background">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h2 className="text-3xl md:text-5xl font-bold text-primary">
               Ready to Build Your Mobile App?
             </h2>
             <p className="text-lg opacity-90 max-w-2xl mx-auto">
               Let's discuss your project and create a mobile experience that your users will love
             </p>
+            <div className="max-w-3xl mx-auto text-center space-y-10"></div>
             <Link to="/contact">
-              <Button size="lg" variant="secondary" className="bg-white text-accent hover:bg-white/90">
-                Get Started Today <ChevronRight className="ml-2 h-4 w-4" />
+              <Button size="lg" className="text-base">
+                Get Started Today
               </Button>
             </Link>
           </div>
