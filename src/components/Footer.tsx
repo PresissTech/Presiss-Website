@@ -26,10 +26,9 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4 text-accent">Services</h3>
             <ul className="space-y-2">
-              <li className="text-sm text-primary-foreground/80">Website Development</li>
-              <li className="text-sm text-primary-foreground/80">Mobile App Development</li>
-              <li className="text-sm text-primary-foreground/80">Digital Marketing</li>
-              <li className="text-sm text-primary-foreground/80">UI/UX Design</li>
+              <li> <Link to="/mobile-app" className="text-sm hover:text-accent transition-colors">Mobile App Development</Link></li>
+              <li> <Link to="/web-development" className="text-sm hover:text-accent transition-colors">Website Development</Link></li>
+              <li> <Link to="/ui-ux-design" className="text-sm hover:text-accent transition-colors">UI/UX Design</Link></li>
             </ul>
           </div>
 

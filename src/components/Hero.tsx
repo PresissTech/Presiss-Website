@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
   return (
     <section className="relative bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/10 py-20 md:py-32 overflow-hidden">
       <div className="container">
@@ -12,7 +15,7 @@ const Hero = () => {
             <p className="text-lg text-muted-foreground max-w-xl">
               We don’t just design interfaces; we shape seamless digital journeys that strengthen your business.
             </p>
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => navigate("/mobile-app")}>
               Explore Our Services
             </Button>
           </div>
